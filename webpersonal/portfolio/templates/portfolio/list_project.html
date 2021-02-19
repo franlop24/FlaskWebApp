@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Projects List{% endblock %}
+{% block header %}
+<div class="col-lg-8 col-md-10 mx-auto">
+    <div class="site-heading">
+      <h1>Admin</h1>
+      <span class="subheading">List Projects</span>
+    </div>
+  </div>
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+    <a href="{{ url_for('portfolio.add_project') }}" class="btn btn-success">Crear Nuevo</a>
+    <br>
+    <br>
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Actions</th>
+        </tr>
+        {% for project in projects %}
+          <tr>
+            <td>{{ project.title }}</td>
+            <td><a class="text-primary" href="{{ url_for('portfolio.project',project_id=project.id) }}">Ver Detalles</a></td>
+          </tr>
+        {% endfor %}
+    </table>
+  </div>
+  </div>
+</div>
+{% endblock %}

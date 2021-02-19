@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Acerca de {% endblock %}
+
+<!-- Cabecera -->
+
+{% block header_img %}{{ url_for('static',filename="img/about-bg.jpg") }}{% endblock %}
+{% block header %}
+<div class="col-lg-8 col-md-10 mx-auto">
+  <div class="site-heading">
+    <h1>Acerca de</h1>
+    <span class="subheading">Biografía</span>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Contenido Principal -->
+<div class="container">
+  <div class="row">   
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+      <img class="img-fluid avatar" src="{{ url_for('static',filename='img/avatar.jpg') }}" alt="">
+    </div>
+    <div class="col-lg-7 col-md-8">
+      <h2 class="section-heading">Francisco López</h2>
+      <h4>Desarrollador Python</h4>   
+      <p>Nacido en... lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit...</p>
+    </div>
+  </div>  
+</div>
+
+<hr>
+{% endblock %}

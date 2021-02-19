@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock %}
+    <!-- Cabecera -->
+{% block header_img %}{{ url_for('static', filename='img/home-bg.jpg') }}{% endblock %}
+{% block header %}
+<div class="col-lg-8 col-md-10 mx-auto">
+  <div class="site-heading">
+    <h1>Francisco López</h1>
+    <span class="subheading">Maestro en Sistemas Computacionales - Desarrollador Python</span>
+  </div>
+</div>
+{% endblock %}

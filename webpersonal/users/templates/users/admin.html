@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Admin Site{% endblock %}
+{% block header %}
+<div class="col-lg-8 col-md-10 mx-auto">
+    <div class="site-heading">
+      <h1>Admin</h1>
+      <span class="subheading">App List</span>
+    </div>
+  </div>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <table class="table table-stripped">
+                <tr class="">
+                    <th>App</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><a class='text-primary' href="{{ url_for('portfolio.list_project') }}">Projects</a></td>
+                    <td>Administrador de Proyectos</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <hr>
+</div>
+{% endblock %}

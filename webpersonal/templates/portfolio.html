@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Portfolio{% endblock %}
+<!-- Cabecera -->
+{% block header_img %}{{ url_for('static', filename='img/portfolio-bg.jpg') }}{% endblock %}
+{% block header %}
+<div class="col-lg-8 col-md-10 mx-auto">
+	<div class="site-heading">
+	  <h1>Portafolio</h1>
+	  <span class="subheading">Currículo</span>
+	</div>
+  </div>
+{% endblock %}
+<!-- Contenido Principal -->
+{% block content %}
+
+<div class="container">
+	{% for project in projects %}
+	<div class="row project">  	
+			<div class="col-lg-3 col-md-4 offset-lg-1">
+				<img class="img-fluid" src="{{ url_for('static', filename='images/'+project.image) }}" alt="">
+			</div>
+		  <div class="col-lg-7 col-md-8">
+				<h2 class="section-heading title">{{ project.title }}</h2>   
+			<p>{{ project.description }}</p>
+			{% if project.web %}
+			<p><a href="{{ project.web }}">Más información</a></p>
+			{% endif %}
+			</div>
+		</div>
+	{% endfor %}
+</div>
+<hr>
+{% endblock %}
